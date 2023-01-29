@@ -1,0 +1,18 @@
+<h1 [ngClass]="'text-5xl bold text-center mt-8'">{{ title }}</h1>
+<button
+  (click)="getBeers()"
+  [ngClass]="'border-black border-2 p-2 m-auto ml-20'"
+>
+  Refresh
+</button>
+<div [ngClass]="'flex flex-wrap gap-x-[16px] gap-y-12 mt-16 w-[90vw] m-auto'">
+  <div *ngFor="let beer of beers">
+    <blst-beer
+      [routerLink]="['/beer', beer.id]"
+      [beer]="beer"
+      [ngClass]="
+        ' cursor-pointer flex flex-row items-center w-[calc(22.5vw-16px)] shadow-lg rounded-lg p-12 border-[rgba(0 0 0 0.5)] border-2'
+      "
+    ></blst-beer>
+  </div>
+</div>

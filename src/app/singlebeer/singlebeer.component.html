@@ -1,0 +1,25 @@
+<button
+  [routerLink]="['/home']"
+  [ngClass]="'border-black border-2 p-2 m-auto ml-20 mt-20'"
+>
+  Go to home
+</button>
+<div
+  [ngClass]="
+    'w-[70vw] flex flex-col items-center justify-center gap-8 text-center m-auto'
+  "
+>
+  <div [ngClass]="'flex flex-col items-center justify-center'">
+    <img src="{{ beer.image_url }}" [ngClass]="'h-[300px]'" />
+    <div [ngClass]="'text-2xl italic bold'">{{ beer.tagline }}</div>
+  </div>
+  <div [ngClass]="'flex flex-col gap-4'">
+    <div><span [ngClass]="'underline'">Name:</span><br />{{ beer.name }}</div>
+    <div>
+      <span [ngClass]="'underline'">Description:</span><br />{{
+        beer.description
+      }}
+    </div>
+    <div><span [ngClass]="'underline'">Date:</span><br />{{ beer.first_brewed }}</div>
+  </div>
+</div>
